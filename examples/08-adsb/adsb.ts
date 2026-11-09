@@ -77,15 +77,17 @@ export const altitudeColor = (alt: Aircraft['alt_baro']): string => {
     return `rgb(${STOPS[STOPS.length - 1][1].join(',')})`;
 };
 
-export const aircraftIcon = (track: number, color: string): L.DivIcon =>
+const ICON_PX = 36;
+
+export const aircraftIcon =(track: number, color: string): L.DivIcon =>
     L.divIcon({
         className: 'adsb-aircraft',
-        html: `<svg width="22" height="22" viewBox="0 0 24 24" style="transform:rotate(${track}deg)">
+        html: `<svg width="${ICON_PX}" height="${ICON_PX}" viewBox="0 0 24 24" style="transform:rotate(${track}deg)">
             <path d="M12 2 L13.5 9 L22 13 L22 15 L13.5 12.5 L13 19 L16 21 L16 22.5 L12 21.5 L8 22.5 L8 21 L11 19 L10.5 12.5 L2 15 L2 13 L10.5 9 Z"
                 fill="${color}" stroke="#000" stroke-width="0.8"/>
         </svg>`,
-        iconSize: [22, 22],
-        iconAnchor: [11, 11],
+        iconSize: [ICON_PX, ICON_PX],
+        iconAnchor: [ICON_PX / 2, ICON_PX / 2],
     });
 
 const fmt = (v: number | undefined, unit: string, digits = 0) =>

@@ -2,6 +2,8 @@
 
 Shows live ADS-B aircraft over the visible map area. Data comes from [airplanes.live](https://airplanes.live/).
 
+![Aircraft around Vienna, with the popup for LGL8854 open](./screenshot.jpg)
+
 ## Run
 
 ```sh
